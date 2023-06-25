@@ -27,7 +27,7 @@ int _fprintf(spec_s spec[], const char *format, va_list ap)
 			slice[0] = spec_func(spec, format[i]);
 			if (slice[0].sp != NULL)
 			{
-				counter = slice[0].f(ap);
+				counter += slice[0].p(ap);
 			}
 			else if (slice[0].sp == NULL)
 			{
@@ -35,3 +35,4 @@ int _fprintf(spec_s spec[], const char *format, va_list ap)
 		}
 	}
 	return (counter);
+}

@@ -13,8 +13,8 @@ int _printf(const char *format, ...)
 	int counter;
 	va_list ap;
 	spec_s spec[] = {
-		{'c',},
-		{'s',}
+		{"c",format_c},
+		{NULL,NULL}
 	};
 	if (!format)
 		counter = -1;
