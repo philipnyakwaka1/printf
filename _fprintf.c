@@ -30,6 +30,8 @@ int _fprintf(spec_s spec[], const char *format, va_list ap)
 		}
 		if (slice[0].sp == NULL)
 		{
+			if (format[i] == '%')
+				counter += _putchar(format[i]);
 		}
 	}
 	return (counter);
