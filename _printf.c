@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -18,15 +19,15 @@ int _printf(const char *format, ...)
 		{"R", rot13},
 		{NULL, NULL}
 	};
-	va_start(ap, format);
 	if (!format)
 	{
 		counter = -1;
 	}
 	else
 	{
+		va_start(ap, format);
 		counter = _fprintf(spec, format, ap);
+		va_end(ap);
 	}
-	va_end(ap);
 	return (counter);
 }
