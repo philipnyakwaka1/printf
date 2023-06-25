@@ -15,6 +15,7 @@ int _printf(const char *format, ...)
 	spec_s spec[] = {
 		{"c", format_c},
 		{"s", format_s},
+		{"R", rot13},
 		{NULL, NULL}
 	};
 	if (!format)
