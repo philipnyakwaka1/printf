@@ -19,18 +19,16 @@ int _fprintf(spec_s spec[], const char *format, va_list ap)
 		if (format[i] != '%')
 		{
 			counter += _putchar(format[i]);
+			continue;
 		}
-		else
+		i++;
+		slice[0] = spec_func(spec, format[i]);
+		if (slice[0].sp != NULL)
 		{
-			i++;
-			slice[0] = spec_func(spec, format[i]);
-			if (slice[0].sp != NULL)
-			{
-				counter += slice[0].p(ap);
-			}
-			else if (slice[0].sp == NULL)
-			{
-			}
+			counter += slice[0].p(ap);
+		}
+		if (slice[0].sp == NULL)
+		{
 		}
 	}
 	return (counter);
