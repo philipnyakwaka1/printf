@@ -13,9 +13,9 @@ int _printf(const char *format, ...)
 	int counter;
 	va_list ap;
 	spec_s spec[] = {
-		{"c",format_c},
-		{"s",format_s},
-		{NULL,NULL}
+		{"c", format_c},
+		{"s", format_s},
+		{NULL, NULL}
 	};
 	if (!format)
 		counter = -1;
