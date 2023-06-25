@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 	va_list ap;
 	spec_s spec[] = {
 		{"c",format_c},
+		{"s",format_s},
 		{NULL,NULL}
 	};
 	if (!format)
