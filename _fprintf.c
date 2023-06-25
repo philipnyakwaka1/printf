@@ -18,8 +18,7 @@ int _fprintf(spec_s spec[], const char *format, va_list ap)
 	{
 		if (format[i] != '%')
 		{
-			_putchar(format[i]);
-			counter++;
+			counter += _putchar(format[i]);
 		}
 		else
 		{
