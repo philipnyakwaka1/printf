@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 	}
 	else
 	{
-		counter = _fprintf(spec, format, ap)
+		counter = _fprintf(spec, format, ap);
 	}
 	va_end(ap);
 	return (counter);
