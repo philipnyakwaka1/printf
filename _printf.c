@@ -17,6 +17,8 @@ int _printf(const char *format, ...)
 		{"c", format_c},
 		{"s", format_s},
 		{"R", rot13},
+		{"i", print_int},
+//		{"d", print_dec},
 		{NULL, NULL}
 	};
 	if (!format)

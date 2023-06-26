@@ -9,7 +9,10 @@
 int format_c(va_list ap)
 {
 	char c;
+	int count;
 
+	count = 0;
 	c = va_arg(ap, int);
-	return (_putchar(c));
+	count += _putchar(c);
+	return (count);
 }
