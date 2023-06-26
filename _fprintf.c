@@ -34,6 +34,11 @@ int _fprintf(spec_s spec[], const char *format, va_list ap)
 				counter += _putchar(format[i]);
 			if (format[i] != '\0' && format[i] != '%')
 				counter += _putchar(format[--i]);
+			if (format[i] == '\0')
+			{
+				counter = -1;
+				break;
+			}
 		}
 	}
 	return (counter);
