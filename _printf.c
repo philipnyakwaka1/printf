@@ -19,6 +19,7 @@ int _printf(const char *format, ...)
 		{"i", print_int},
 		{"d", print_dec},
 		{"b", print_bin},
+		{"r", print_srev},
 		{"s", format_s},
 		{NULL, NULL}
 	};

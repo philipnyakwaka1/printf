@@ -27,5 +27,6 @@ int main(void)
 	 _printf("%d\n", 23);
 	 _printf("%s\n", "Phillip is my name");
 	_printf("%b\n", 98);
+	_printf("r", "This string has been printed in reverse");
 	 return (0);
 }

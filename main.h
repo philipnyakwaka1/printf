@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdarg.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 int _putchar(char c);
 int _printf(const char *format, ...);
@@ -24,5 +26,6 @@ int rot13(va_list ap);
 int print_int(va_list ap);
 int print_dec(va_list ap);
 int print_bin(va_list ap);
+int print_srev(va_list ap);
 
 #endif
