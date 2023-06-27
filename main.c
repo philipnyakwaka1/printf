@@ -25,5 +25,6 @@ int main(void)
 	 _printf("Negative:[%d]\n", -762534);
 	 printf("Negative:[%d]\n", -762534);
 	 _printf("%d\n", 23);
+	 _printf("%s\n", "Phillip is my name");
 	 return (0);
 }

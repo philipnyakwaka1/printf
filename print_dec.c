@@ -27,12 +27,14 @@ int print_dec(va_list ap)
 	}
 	if (number > 0)
 	{
-		do {
+		do
+	       	{
 			val *= 10;
 			number /= 10;
 		} while (number / 10 != 0);
 		number = n;
-		do {
+		do
+	       	{
 			fig = number / val;
 			_putchar(fig + '0');
 			number -= (fig * val);

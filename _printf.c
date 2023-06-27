@@ -15,10 +15,10 @@ int _printf(const char *format, ...)
 	va_list ap;
 	spec_s spec[] = {
 		{"c", format_c},
-		{"s", format_s},
 		{"R", rot13},
 		{"i", print_int},
-//		{"d", print_dec},
+		{"d", print_dec},
+		{"s", format_s},
 		{NULL, NULL}
 	};
 	if (!format)
