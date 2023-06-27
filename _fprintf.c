@@ -10,7 +10,7 @@
  */
 int _fprintf(spec_s spec[], const char *format, va_list ap)
 {
-	int i, j;
+	int i;
 	int counter;
 	spec_s slice[1];
 
