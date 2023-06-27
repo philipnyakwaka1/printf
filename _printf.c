@@ -21,6 +21,10 @@ int _printf(const char *format, ...)
 		{"b", print_bin},
 		{"r", print_srev},
 		{"s", format_s},
+		{"u", print_unsigned},
+		{"o", print_octal},
+		{"x", print_hex},
+		{"X", print_HEX},
 		{NULL, NULL}
 	};
 	if (!format)
