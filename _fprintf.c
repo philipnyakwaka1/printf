@@ -10,7 +10,7 @@
  */
 int _fprintf(spec_s spec[], const char *format, va_list ap)
 {
-	int i;
+	int i, j;
 	int counter;
 	spec_s slice[1];
 
@@ -22,24 +22,28 @@ int _fprintf(spec_s spec[], const char *format, va_list ap)
 			counter += _putchar(format[i]);
 			continue;
 		}
-		i++;
-		slice[0] = spec_func(spec, format[i]);
+		slice[0] = spec_func(spec, format[i + 1]);
 		if (slice[0].sp != NULL)
 		{
-			counter += slice[0].p(ap);
-		}
-		if (slice[0].sp == NULL)
-		{
-			if (format[i] == '%')
-				counter += _putchar(format[i]);
-			if (format[i] != '\0' && format[i] != '%')
-				counter += _putchar(format[--i]);
-			if (format[i] == '\0')
+			j = slice[0].p(ap);
+			if (j == -1)
 			{
-				counter = -1;
-				break;
+				return (j);
 			}
+			counter += j;
 		}
+		if (slice[0].sp == NULL && format[i + 1] == ' ')
+		{
+			if (format[i + 1] != '\0')
+			{
+				_putchar(format[i]);
+				_putchar(format[i + 1]);
+				counter = counter + 2;
+			}
+			else
+				return (-1);
+		}
+		i++;
 	}
 	return (counter);
 }
