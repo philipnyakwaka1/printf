@@ -13,6 +13,8 @@ int format_s(va_list ap)
 
 	counter = 0;
 	s = va_arg(ap, char *);
+	if (!s)
+		s = "(null)";
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		counter += _putchar(s[i]);
