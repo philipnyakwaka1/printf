@@ -8,40 +8,28 @@
 
 int rot13(va_list ap)
 {
-	int i, counter;
-	char *str;
+	int i, j, counter;
+	char str[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char src[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	char *s;
 
+	s = va_arg(ap, char *);
 	counter = 0;
-	str = va_arg(ap, char *);
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (str[i] >= 65 && str[i] <= 90)
+		if ((s[i] >= 65 && s[i] <= 90) || (s[i] >= 97 && s[i] <= 122))
 		{
-			if (str[i] < 78)
+			for (j = 0; str[j] != '\0'; j++)
 			{
-				counter += _putchar(str[i] + 13);
-			}
-			else
-			{
-				counter += _putchar(str[i] - 13);
-			}
-		}
-		else if (str[i] >= 97 && str[i] <= 122)
-		{
-			if (str[i] < 110)
-			{
-				counter += _putchar(str[i] + 13);
-			}
-			else
-			{
-				counter += _putchar(str[i] - 13);
+				if (str[j] == s[i])
+				{
+					counter += _putchar(src[j]);
+					break;
+				}
 			}
 		}
 		else
-		{
-		counter += _putchar(str[i]);
-		}
-		i++;
+			counter += _putchar(s[i]);
 	}
 	return (counter);
 }
